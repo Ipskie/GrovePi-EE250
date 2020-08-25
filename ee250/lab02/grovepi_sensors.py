@@ -25,8 +25,11 @@ sys.path.append('../../Software/Python/grove_rgb_lcd')
 
 ULTRASONIC_PORT = 8 # D8
 ROTARY_PORT = 7     # D7
+
 # LCD Goes on I2C-1
 LED_PORT = 3        # D7
+
+grovepi.pinMode(LED_PORT, "OUTPUT")
 
 if __name__ == '__main__':
     while True:
