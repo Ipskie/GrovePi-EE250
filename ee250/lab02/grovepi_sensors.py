@@ -25,6 +25,7 @@ sys.path.append('../../Software/Python/grove_rgb_lcd')
 import grovepi
 
 if __name__ == '__main__':
+    print("test")
     PORT = 4    # D4
 
     while True:
