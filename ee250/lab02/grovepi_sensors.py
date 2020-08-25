@@ -1,8 +1,8 @@
 """ EE 250L Lab 02: GrovePi Sensors
 
-List team members here.
+Elijah Yap  
 
-Insert Github repository link here.
+https://github.com/Ipskie/GrovePi-EE250
 """
 
 """python3 interpreters in Ubuntu (and other linux distros) will look in a 
@@ -17,16 +17,13 @@ performance. Because of this, you will not find this in the default directories.
 import sys
 import time
 # By appending the folder of all the GrovePi libraries to the system path here,
-# we are successfully `import grovepi`
+# we successfully `import grovepi`
 sys.path.append('../../Software/Python/')
 # This append is to support importing the LCD library.
 sys.path.append('../../Software/Python/grove_rgb_lcd')
 
 import grovepi
 
-"""This if-statement checks if you are running this python file directly. That 
-is, if you run `python3 grovepi_sensors.py` in terminal, this if-statement will 
-be true"""
 if __name__ == '__main__':
     PORT = 4    # D4
 
