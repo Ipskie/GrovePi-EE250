@@ -31,7 +31,9 @@ LED_PORT = 3        # D7
 
 grovepi.pinMode(LED_PORT, "OUTPUT")
 
+
 if __name__ == '__main__':
+    setText("test text")
     while True:
         # So we do not poll the sensors too quickly which may introduce noise,
         # sleep for a reasonable time of 200ms between each iteration.
