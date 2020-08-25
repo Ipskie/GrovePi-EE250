@@ -22,6 +22,7 @@ import time
 sys.path.append('../../Software/Python/')
 # This append is to support importing the LCD library.
 sys.path.append('../../Software/Python/grove_rgb_lcd')
+from grove_rgb_lcd import *
 
 ULTRASONIC_PORT = 8 # D8
 ROTARY_PORT = 7     # D7
