@@ -24,11 +24,11 @@ sys.path.append('../../Software/Python/')
 sys.path.append('../../Software/Python/grove_rgb_lcd')
 from grove_rgb_lcd import *
 
-ULTRASONIC_PORT = 8 # D8
-ROTARY_PORT = 7     # D7
+ULTRASONIC_PORT = 8 # Digital Port D8
+ROTARY_PORT = 0     # Anaolog Port A0
 
 # LCD Goes on I2C-1
-LED_PORT = 3        # D7
+LED_PORT = 3        # Digital Port D7
 
 grovepi.pinMode(LED_PORT, "OUTPUT")
 
