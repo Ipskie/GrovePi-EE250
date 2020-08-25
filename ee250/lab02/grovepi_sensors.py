@@ -14,23 +14,24 @@ Examples of some default directories are (but not limited to):
 The `sys` module, however, is a builtin that is written in and compiled in C for
 performance. Because of this, you will not find this in the default directories.
 """
-import sys
-import time
 # By appending the folder of all the GrovePi libraries to the system path here,
 # we successfully `import grovepi`
+import grovepi
+import sys
+import time
 sys.path.append('../../Software/Python/')
 # This append is to support importing the LCD library.
 sys.path.append('../../Software/Python/grove_rgb_lcd')
 
-import grovepi
+ULTRASONIC_PORT = 8 # D8
+ROTARY_PORT = 7     # D7
+# LCD Goes on I2C-1
+LED_PORT = 3        # D7
 
 if __name__ == '__main__':
-    print("test")
-    PORT = 4    # D4
-
     while True:
-        #So we do not poll the sensors too quickly which may introduce noise,
-        #sleep for a reasonable time of 200ms between each iteration.
+        # So we do not poll the sensors too quickly which may introduce noise,
+        # sleep for a reasonable time of 200ms between each iteration.
         time.sleep(0.2)
 
-        print(grovepi.ultrasonicRead(PORT))
+        print(grovepi.ultrasonicRead(ULTRASONIC_PORT))
