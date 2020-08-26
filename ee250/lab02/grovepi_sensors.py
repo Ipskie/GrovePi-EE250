@@ -45,11 +45,8 @@ if __name__ == '__main__':
         time.sleep(0.2)
 
         # normalize rotary value, then translate as length
-        threshhold = (rotary_limits[1] - grovepi.analogRead(ROTARY_PORT) + rotary_limits[0]) 
-        threshhold /= rotary_limits[1] - rotary_limits[0]
-        threshhold *= ranger_limits[1] - ranger_limits[0]
-        threshhold = int(threshhold)
-
+        threshhold = grovepi.analogRead(ROTARY_PORT)
+        
         # get normalized range
         n_range = grovepi.ultrasonicRead(ULTRASONIC_PORT)
 
@@ -60,4 +57,4 @@ if __name__ == '__main__':
             setRGB(128, 0, 0)
         else:
             setRGB(0, 128, 0)
-        setText_norefresh(f"{threshhold:3}cm {OBJ_PRES}\n{n_range:3}cm")
+        setText_norefresh(f"{threshhold:4}cm {OBJ_PRES}\n {n_range:3}cm")
