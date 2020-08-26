@@ -32,11 +32,22 @@ LED_PORT = 3        # Digital Port D7
 
 grovepi.pinMode(LED_PORT, "OUTPUT")
 
+# upper and lower bounds of potentiometer output
+rotary_limits = (0, 1023)
+
+# ROUGH upper and lower bounds of ranger output
+ranger_limits = (0, 1023)
+
 if __name__ == '__main__':
     setText("test text")
     while True:
         # So we do not poll the sensors too quickly which may introduce noise,
         # sleep for a reasonable time of 200ms between each iteration.
         time.sleep(0.2)
-        print(grovepi.analogRead(ROTARY_PORT))
+
+        # get normalized value as threshhold
+        threshhold = (ranger_limits[1] - grovepi.analogRead(ROTARY_PORT) + ranger_limits[0]) 
+        threshhold /= ranger_limits[1] - ranger_limits[0]
+
+        print()
         # print(grovepi.ultrasonicRead(ULTRASONIC_PORT))
