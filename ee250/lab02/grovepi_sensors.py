@@ -44,13 +44,12 @@ if __name__ == '__main__':
         # sleep for a reasonable time of 200ms between each iteration.
         time.sleep(0.2)
 
-        # normalize rotary value, then translate as length
+        # get rotary value
         threshhold = grovepi.analogRead(ROTARY_PORT)
         
-        # get normalized range
+        # get range
         n_range = grovepi.ultrasonicRead(ULTRASONIC_PORT)
 
-        print(threshhold, n_range)
         OBJ_PRES = ""
         if n_range < threshhold:
             OBJ_PRES = "OBJ PRES"
