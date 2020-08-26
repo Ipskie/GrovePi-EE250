@@ -49,5 +49,4 @@ if __name__ == '__main__':
         threshhold = (ranger_limits[1] - grovepi.analogRead(ROTARY_PORT) + ranger_limits[0]) 
         threshhold /= ranger_limits[1] - ranger_limits[0]
 
-        print(threshhold)
-        # print(grovepi.ultrasonicRead(ULTRASONIC_PORT))
+        print(grovepi.ultrasonicRead(ULTRASONIC_PORT))
