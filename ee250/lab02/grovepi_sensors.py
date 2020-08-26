@@ -56,8 +56,8 @@ if __name__ == '__main__':
         print(threshhold, n_range)
         OBJ_PRES = ""
         if n_range < threshhold:
-            setRGB(0, 128, 0)
             OBJ_PRES = "OBJ PRES"
-        else:
             setRGB(128, 0, 0)
+        else:
+            setRGB(0, 128, 0)
         setText(f"{threshhold:3}cm {OBJ_PRES}\n{n_range:3}cm")
