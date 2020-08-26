@@ -54,6 +54,7 @@ if __name__ == '__main__':
         # invert the range
         n_range = 1 - n_range
 
+        print(threshhold, n_range)
         if n_range > threshhold:
             setText("BACK OFF")
             setRGB(128, 0, 0)
