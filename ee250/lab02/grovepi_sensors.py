@@ -51,6 +51,8 @@ if __name__ == '__main__':
         # get normalized range
         n_range = (ranger_limits[1] - grovepi.ultrasonicRead(ULTRASONIC_PORT) + ranger_limits[0]) 
         n_range /= ranger_limits[1] - ranger_limits[0]
+        # invert the range
+        n_range = 1 - n_range
 
         if n_range > threshhold:
             setText("BACK OFF")
