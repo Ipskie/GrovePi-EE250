@@ -50,8 +50,7 @@ if __name__ == '__main__':
         threshhold /= rotary_limits[1] - rotary_limits[0]
         
         # get normalized range
-        n_range = (ranger_limits[1] - grovepi.digitalRead(ULTRASONIC_PORT) + ranger_limits[0]) 
+        n_range = (ranger_limits[1] - grovepi.ultrasonicRead(ULTRASONIC_PORT) + ranger_limits[0]) 
         n_range /= ranger_limits[1] - ranger_limits[0]
 
         print(threshhold, n_range)
-        print(grovepi.digitalRead(ULTRASONIC_PORT))
