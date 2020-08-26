@@ -1,8 +1,8 @@
 """ EE 250L Lab 02: GrovePi Sensors
 
 Elijah Yap  
-
 https://github.com/Ipskie/GrovePi-EE250
+
 """
 
 """python3 interpreters in Ubuntu (and other linux distros) will look in a 
