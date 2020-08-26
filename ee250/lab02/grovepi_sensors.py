@@ -36,7 +36,7 @@ grovepi.pinMode(LED_PORT, "OUTPUT")
 rotary_limits = (0, 1023)
 
 # ROUGH upper and lower bounds of ranger output
-ranger_limits = (0, 1023)
+ranger_limits = (0, 150)
 
 if __name__ == '__main__':
     setText("test text")
@@ -45,8 +45,12 @@ if __name__ == '__main__':
         # sleep for a reasonable time of 200ms between each iteration.
         time.sleep(0.2)
 
-        # get normalized value as threshhold
-        threshhold = (ranger_limits[1] - grovepi.analogRead(ROTARY_PORT) + ranger_limits[0]) 
-        threshhold /= ranger_limits[1] - ranger_limits[0]
+        # get normalized rotary value as threshhold
+        threshhold = (rotary_limits[1] - grovepi.analogRead(ROTARY_PORT) + rotary_limits[0]) 
+        threshhold /= rotary_limits[1] - rotary_limits[0]
+        
+        # get normalized range
+        n_range = (ranger_limits[1] - grovepi.analogRead(ULTRASONIC_PORT) + ranger_limits[0]) 
+        n_range /= ranger_limits[1] - ranger_limits[0]
 
-        print(grovepi.ultrasonicRead(ULTRASONIC_PORT))
+        print(threshhold, n_range)
