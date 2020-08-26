@@ -49,13 +49,11 @@ if __name__ == '__main__':
         threshhold /= rotary_limits[1] - rotary_limits[0]
         
         # get normalized range
-        n_range = (ranger_limits[1] - grovepi.ultrasonicRead(ULTRASONIC_PORT) + ranger_limits[0]) 
-        n_range /= ranger_limits[1] - ranger_limits[0]
+        n_range = grovepi.ultrasonicRead(ULTRASONIC_PORT) + ranger_limits[0]
 
         print(threshhold, n_range)
         if n_range > threshhold:
-            setText("BACK OFF")
             setRGB(128, 0, 0)
         else:
-            setText("6 FEET")
             setRGB(0, 128, 0)
+            setText(f"BACK OFF \n {n_range:3}cm")
