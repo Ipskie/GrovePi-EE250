@@ -56,4 +56,4 @@ if __name__ == '__main__':
             setRGB(128, 0, 0)
         else:
             setRGB(0, 128, 0)
-            setText(f"BACK OFF \n {n_range:3}cm")
+        setText(f"BACK OFF \n {n_range:3}cm")
