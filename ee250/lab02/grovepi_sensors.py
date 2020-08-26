@@ -54,3 +54,4 @@ if __name__ == '__main__':
         n_range /= ranger_limits[1] - ranger_limits[0]
 
         print(threshhold, n_range)
+        print(grovepi.analogRead(ULTRASONIC_PORT))
