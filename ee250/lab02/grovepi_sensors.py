@@ -39,7 +39,6 @@ rotary_limits = (0, 1023)
 ranger_limits = (0, 150)
 
 if __name__ == '__main__':
-    setText("test text")
     while True:
         # So we do not poll the sensors too quickly which may introduce noise,
         # sleep for a reasonable time of 200ms between each iteration.
@@ -53,4 +52,9 @@ if __name__ == '__main__':
         n_range = (ranger_limits[1] - grovepi.ultrasonicRead(ULTRASONIC_PORT) + ranger_limits[0]) 
         n_range /= ranger_limits[1] - ranger_limits[0]
 
-        print(threshhold, n_range)
+        if n_range > threshhold:
+            setText("BACK OFF")
+            setRGB(128, 0, 0)
+        else:
+            setText("6 FEET")
+            setRGB(0, 128, 0)
